@@ -60,19 +60,17 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #f9ed69;
-            color: #333;
-            padding: 10px 20px;
+         
+            color: #ffe16b;
+           
             border: none;
             border-radius: 5px;
-            font-size: 16px;
+            font-size: 24px;
             cursor: pointer;
             transition: background-color 0.3s;
             z-index: 2;
         }
-        .click-me:hover {
-            background-color: #ffd700;
-        }
+
         .gift-box-content {
             display: none;
             position: fixed;
@@ -120,13 +118,10 @@
 
     <div class="gift-box" id="giftBox">
         <div class="ribbon"></div>
-        <button class="click-me" id="clickMe">Click Me!</button>
+        <p class="click-me" id="clickMe">Click Me!</p>
         <div class="gift-box-content" id="giftContent">
             <button class="close-btn" onclick="closeGift()">×</button>
-            <div>
-                <div>🎉 Chúc Mừng Ngày 20/10! 🎉</div>
-                <div>Chúc bạn luôn hạnh phúc và thành công!</div>
-            </div>
+
         </div>
     </div>
 
@@ -287,12 +282,15 @@
 
         // Sự kiện nhấn nút
         document.getElementById('clickMe').addEventListener('click', function() {
-            // Hiện nội dung hộp quà
-            document.getElementById('giftContent').style.display = 'flex';
-            // Kích hoạt pháo hoa
-            fireworks.push(new Firework(random(0, cw), ch, random(0, cw), random(0, ch / 2)));
+            
+            window.location.href = 'phaohoa.html';
+      
         });
-
+        document.getElementById('giftBox').addEventListener('click', function() {
+            
+            window.location.href = 'phaohoa.html';
+      
+        });
         function closeGift() {
             document.getElementById('giftContent').style.display = 'none';
         }
